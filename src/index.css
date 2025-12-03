@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义样式 */
+@layer base {
+  body {
+    @apply text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  /* 文章卡片标题截断 */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* 代码块样式 */
+  .prose pre {
+    @apply bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto;
+  }
+  
+  .prose code {
+    @apply bg-gray-100 text-gray-800 px-1 py-0.5 rounded text-sm;
+  }
+  
+  .prose pre code {
+    @apply bg-transparent p-0;
+  }
+  
+  /* 表格样式 */
+  .prose table {
+    @apply w-full border-collapse border border-gray-300;
+  }
+  
+  .prose th {
+    @apply bg-gray-50 border border-gray-300 px-4 py-2 text-left font-semibold;
+  }
+  
+  .prose td {
+    @apply border border-gray-300 px-4 py-2;
+  }
+  
+  /* 链接样式 */
+  .prose a {
+    @apply text-blue-600 hover:text-blue-800 underline;
+  }
+  
+  /* 列表样式 */
+  .prose ul, .prose ol {
+    @apply my-4 ml-4;
+  }
+  
+  .prose li {
+    @apply mb-2;
+  }
+  
+  /* 引用样式 */
+  .prose blockquote {
+    @apply border-l-4 border-blue-500 pl-4 my-4 italic text-gray-600;
+  }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .prose {
+    @apply text-base;
+  }
+  
+  .prose h1 {
+    @apply text-2xl;
+  }
+  
+  .prose h2 {
+    @apply text-xl;
+  }
+  
+  .prose h3 {
+    @apply text-lg;
+  }
+}
