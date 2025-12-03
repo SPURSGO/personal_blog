@@ -79,6 +79,13 @@ export default function Header() {
             >
               关于
             </Link>
+
+            <Link
+              to="/admin"
+              className="text-sm font-medium text-gray-700 hover:text-blue-600"
+            >
+              管理
+            </Link>
           </nav>
 
           {/* Search and Menu */}
@@ -159,6 +166,14 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 关于
+              </Link>
+
+              <Link
+                to="/admin"
+                className="text-base font-medium py-2 text-gray-700 hover:text-blue-600"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                管理
               </Link>
             </div>
           </div>
